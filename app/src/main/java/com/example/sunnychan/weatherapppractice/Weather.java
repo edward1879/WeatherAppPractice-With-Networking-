@@ -11,6 +11,7 @@ public class Weather {
     private String date;
     private String low;
     private String high;
+    private int weatherIcon;
 
     public Weather() {
     }
@@ -20,6 +21,25 @@ public class Weather {
         this.date = date;
         this.low = low;
         this.high = high;
+        setWeatherIcon();
+    }
+
+    private void setWeatherIcon(){
+        switch (weatherDescription){
+            case "Clear":
+                weatherIcon = R.drawable.sunny;
+                break;
+            case "Rain":
+                weatherIcon = R.drawable.rainy;
+                break;
+            case "Clouds":
+                weatherIcon = R.drawable.cloudy;
+                break;
+        }
+    }
+
+    public int getWeatherIcon() {
+        return weatherIcon;
     }
 
     public String getWeatherDescription() {

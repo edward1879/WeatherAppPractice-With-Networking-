@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -50,11 +51,14 @@ public class ForecastAdapter extends BaseAdapter {
         TextView tvLow = (TextView) convertView.findViewById(R.id.tv_low);
         TextView tvHigh = (TextView) convertView.findViewById(R.id.tv_high);
         TextView tvDate = (TextView) convertView.findViewById(R.id.tv_date);
+        ImageView ivWeatherIcon = (ImageView) convertView.findViewById(R.id.iv_weatherIcon);
 
-        tvWeatherDesciption.setText(weather.getWeatherDescription());
+        String weatherDescription =weather.getWeatherDescription();
+        tvWeatherDesciption.setText(weatherDescription);
         tvHigh.setText(weather.getHigh());
         tvLow.setText(weather.getLow());
         tvDate.setText(weather.getDate());
+        ivWeatherIcon.setImageDrawable(context.getApplicationContext().getResources().getDrawable(weather.getWeatherIcon()));
 
 
         return convertView;
