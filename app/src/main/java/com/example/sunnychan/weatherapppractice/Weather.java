@@ -1,5 +1,7 @@
 package com.example.sunnychan.weatherapppractice;
 
+import java.util.ArrayList;
+
 /**
  * Created by SunnyChan on 7/10/2016.
  */
@@ -50,5 +52,18 @@ public class Weather {
 
     public void setHigh(String high) {
         this.high = high;
+    }
+
+    //used for generating sample weather dataset
+    public static ArrayList<Weather> generateSampleData() {
+        ArrayList<Weather> weatherArrayList = new ArrayList<>();
+
+        for (int i = 1; i < 20; i++) {
+            Weather weather = new Weather("Sunny", i + " Oct", "25", "27");
+            weatherArrayList.add(weather);
+        }
+
+
+        return weatherArrayList;
     }
 }

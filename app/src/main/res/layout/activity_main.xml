@@ -8,6 +8,8 @@
     tools:context="com.example.sunnychan.weatherapppractice.MainActivity">
 
     <ListView
+        android:divider="@null"
+        android:dividerHeight="0dp"
         android:id="@+id/list_day"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
