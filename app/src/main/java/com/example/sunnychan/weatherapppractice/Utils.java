@@ -14,17 +14,14 @@ import java.util.Date;
 
 public class Utils {
     public static String toReadableDateString(String timeStamp) throws ParseException {
-//        DateFormat format = new SimpleDateFormat("MMddyyHHmmss");
-        DateFormat format = new SimpleDateFormat("dd-MM");
-        Date date = null;
+        //http://stackoverflow.com/questions/3790954/how-to-get-localized-short-day-in-week-name-mo-tu-we-th
+        //EEE can get the Short-name of a day
+        DateFormat format = new SimpleDateFormat("dd-MMM (EEE)");
 
-        Timestamp timestamp = new Timestamp(Long.parseLong(timeStamp)*1000L);
-        date = new Date();
-        date = timestamp;
-        Log.d("sunny", "timestamp.getTime(): "+ date.toString());
+        Timestamp timestamp = new Timestamp(Long.parseLong(timeStamp) * 1000L);
+        Date date = timestamp;
+        Log.d("sunny", "timestamp.getTime(): " + date.toString());
         String readableDate = format.format(date);
-
-//        date = format.parse(timeStamp);
 
         return readableDate;
     }
